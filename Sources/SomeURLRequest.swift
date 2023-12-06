@@ -21,7 +21,7 @@ public enum SomeURLRequestError: Error {
     case badUrl
 }
 
-internal enum SomeURLRequestBodyType {
+public enum SomeURLRequestBodyType {
     case json
     case urlEncoded
 }
@@ -40,7 +40,7 @@ public struct SomeURLRequest {
         self.session = URLSession(configuration: configuration, delegate: nil, delegateQueue: OperationQueue.main)
     }
     
-    func send<T: Codable>(url: String,
+    public func send<T: Codable>(url: String,
                         path: [String: String] = [:],
                         query: [String: String] = [:],
                         body: [String: Any] = [:],
